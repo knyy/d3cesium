@@ -47,12 +47,13 @@ Installing from the git console
 This sample application is setup to stay current with the Cesium repository, by use of git submodules.  To setup this application 
 on a local machine, follow the instructions below.
 
+    > install nodejs
+    > install npm
+    > install Python 2.X
     > git clone https://github.com/abwood/d3cesium.git
     > git submodule update --init
     > mv 3rdParty/cesium 3rdParty/Cesium
     > cd 3rdParty/Cesium
-    > install nodejs
-    > install npm
     > Tools/apache-ant-1.8.2/bin/ant
     
 
