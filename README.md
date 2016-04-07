@@ -2,16 +2,16 @@ D3 Cesium Demo Application
 ==========================
 This application showcases the synergy between powerful open source visualization frameworks of <a href="http://www.d3js.org">D3</a> 
 and <a href="http://cesium.agi.com">Cesium</a>, by recreating 
-Hans Roslingís compelling visualization of the ìHealth and Wealth of Nationsî.  This demo is largely the result of @abwood and 
-@emackey ís entry for a one day hackathon hosted at Analytical Graphics, Inc in April of 2013.  The goal of this hackathon 
+Hans Rosling‚Äôs compelling visualization of the ‚ÄúHealth and Wealth of Nations‚Äù.  This demo is largely the result of @abwood and 
+@emackey ‚Äôs entry for a one day hackathon hosted at Analytical Graphics, Inc in April of 2013.  The goal of this hackathon 
 attempt was to demostrate the simplicity of supplementing 3D geospatial visualizations with rich and interactive dynamic data plots.
 
 <p align="center">
 <img src="https://github.com/abwood/d3cesium/blob/master/screenshot.png?raw=true" width="75%" height="75%" style="display: block; margin-left: auto; margin-right: auto">
 </p>
  
-The app repurposed Mike Bostockís <a href="http://bost.ocks.org/mike/nations/">D3 recreation</a> of Hans Roslingsí 
-<a href="http://www.youtube.com/watch?v=jbkSRLYSojo">ìHealth and Wealth of Nationsî</a> as an interactive 
+The app repurposed Mike Bostock‚Äôs <a href="http://bost.ocks.org/mike/nations/">D3 recreation</a> of Hans Roslings‚Äô 
+<a href="http://www.youtube.com/watch?v=jbkSRLYSojo">‚ÄúHealth and Wealth of Nations‚Äù</a> as an interactive 
 overlay for a Cesium geospatial view.  We were able to add new context to the data by geolocating each data point with its 
 country of origin.
  
@@ -30,12 +30,12 @@ Implementation Overview
 In Cesium, both income and life expectancy metrics are geolocated to the nation of origin and drawn on the map in 2.5D Columbus 
 view, using <a href="http://cesium.agi.com/Cesium/Build/Documentation/PolylineCollection.html">Polylines</a>. The width of the 
 polyline is proportional to the population of the nation at the given year.  We found that the presentation of this data was 
-most effective in Cesiumís Columbus View, although users may change to other projections, such as the more traditional 3D globe 
+most effective in Cesium‚Äôs Columbus View, although users may change to other projections, such as the more traditional 3D globe 
 view, via the <a href="http://cesium.agi.com/Cesium/Build/Documentation/SceneModePicker.html">SceneModePicker</a> widget.  
 
 For a cohesive visualization, both D3 and Cesium visualizations must interoperate.  In our example application, we show simple 
 but effective ways to tie these two visualizations together.  Mouseover interactions with a nation, in either display, will 
-highlight the nationís Polyline in Cesium and the SVG circle in the D3 chart.  Likewise, clicking on a nation will construct 
+highlight the nation‚Äôs Polyline in Cesium and the SVG circle in the D3 chart.  Likewise, clicking on a nation will construct 
 a <a href="http://cesium.agi.com/Cesium/Build/Documentation/CameraFlightPath.html">CameraFlightPath</a> to fly the 3D camera 
 in Cesium in for a closer look.  The key to loose coupling of these two visualizations was to use 
 <a href="https://github.com/mbostock/d3/wiki/Internals#wiki-d3_dispatch">d3.dispatch</a> for signaling events between each other.  
@@ -49,8 +49,12 @@ on a local machine, follow the instructions below.
 
     > git clone https://github.com/abwood/d3cesium.git
     > git submodule update --init
-    > cd 3rdParty/cesium
+    > mv 3rdParty/cesium 3rdParty/Cesium
+    > cd 3rdParty/Cesium
+    > install nodejs
+    > install npm
     > Tools/apache-ant-1.8.2/bin/ant
+    
 
 Running the sample application locally
 ======================================
